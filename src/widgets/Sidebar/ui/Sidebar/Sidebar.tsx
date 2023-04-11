@@ -5,7 +5,7 @@ import { LangSwitcher } from 'widgets/LangSwitcher/LangSwitcher';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
-  className?: string,
+    className?: string;
 }
 
 export const Sidebar = ({ className }: SidebarProps) => {
@@ -17,7 +17,10 @@ export const Sidebar = ({ className }: SidebarProps) => {
 
     return (
         <div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
-            <button type="button" onClick={onToggle}>toggle</button>
+            {/* eslint-disable-next-line i18next/no-literal-string */}
+            <button type="button" onClick={onToggle}>
+                toggle
+            </button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.lang} />
