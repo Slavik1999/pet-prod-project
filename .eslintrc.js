@@ -32,7 +32,7 @@ module.exports = {
         'react/jsx-props-no-spreading': 'warn',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'max-len': ['error', { code: 100, ignoreComments: true }],
+        'max-len': ['error', { code: 140, ignoreComments: true }],
         'i18next/no-literal-string': ['error', { markupOnly: true }],
     },
     globals: {
