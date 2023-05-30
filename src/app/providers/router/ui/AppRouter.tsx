@@ -1,7 +1,7 @@
-import { Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { routeConfig } from 'shared/config/routeConfig/routeConfig';
-import { PageLoader } from 'widgets/PageLoader/ui/PageLoader';
+import { PageLoader } from 'shared/ui/PageLoader/PageLoader';
 
 const AppRouter = () => (
     <Routes>
@@ -9,12 +9,13 @@ const AppRouter = () => (
             <Route
                 key={path}
                 path={path}
-                element={
-                    // eslint-disable-next-line i18next/no-literal-string, react/jsx-wrap-multilines
+                element={(
                     <Suspense fallback={<PageLoader />}>
-                        <div className="page-wrapper">{element}</div>
+                        <div className="page-wrapper">
+                            {element}
+                        </div>
                     </Suspense>
-                }
+                )}
             />
         ))}
     </Routes>
